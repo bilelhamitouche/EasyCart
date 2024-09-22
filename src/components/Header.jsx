@@ -5,7 +5,11 @@ import { MdSunny } from "react-icons/md";
 function Header() {
   return (
     <header className="flex justify-between items-center p-8">
-      <h1 className="text-2xl font-bold">EasyCart</h1>
+      <Link
+        to="/"
+        className="text-2xl font-bold">
+        EasyCart
+      </Link>
       <nav className="flex gap-8 justify-between items-center">
         <NavLink
           className={({ isActive }) => (isActive ? "text-blue-500" : "")}
