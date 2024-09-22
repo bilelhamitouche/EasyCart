@@ -8,7 +8,7 @@ import {
 function Footer() {
   return (
     <footer className="flex flex-col gap-6 justify-center items-center p-8 text-white bg-black">
-      <div className="flex justify-between items-center w-full">
+      <div className="flex flex-col gap-8 justify-between items-center w-full sm:flex-row">
         <Link
           to="/"
           className="text-2xl font-bold">
@@ -21,8 +21,8 @@ function Footer() {
           <Link to="/contact">Contact</Link>
         </nav>
       </div>
-      <div className="flex gap-6 justify-between items-center w-full">
-        <div className="flex flex-col gap-4 justify-center items-start">
+      <div className="flex flex-col gap-6 justify-between items-center w-full sm:flex-row">
+        <div className="flex flex-col gap-4 justify-center items-center sm:items-start">
           <span>Email: easycart@gmail.com</span>
           <span>Phone: 0516468962</span>
         </div>
