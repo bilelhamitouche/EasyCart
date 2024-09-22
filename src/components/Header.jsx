@@ -12,22 +12,22 @@ function Header() {
       </Link>
       <nav className="flex gap-8 justify-between items-center">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-700" : "")}
           to="/">
           Home
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-700" : "")}
           to="/shop">
           Shop
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-700" : "")}
           to="/about">
           About
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-700" : "")}
           to="/contact">
           Contact
         </NavLink>
