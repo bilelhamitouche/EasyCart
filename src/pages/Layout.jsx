@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 function Layout() {
   return (
-    <div className="grid h-full grid-rows-layout">
+    <div className="grid h-screen grid-rows-layout">
       <Header />
       <Outlet />
       <Footer />
