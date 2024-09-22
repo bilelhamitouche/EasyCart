@@ -1,14 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
-      errorElement: (
-        <h1 className="text-xl font-bold text-red">Something went wrong!</h1>
-      ),
+      errorElement: <ErrorPage />,
     },
   ]);
   return <RouterProvider router={router} />;
