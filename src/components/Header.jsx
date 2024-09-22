@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
+import { MdSunny } from "react-icons/md";
 
 function Header() {
   return (
@@ -33,6 +34,9 @@ function Header() {
           className="p-2 rounded-full hover:bg-gray-100">
           <BsCart3 className="text-xl font-bold" />
         </Link>
+        <button className="p-2 rounded-full hover:bg-gray-100">
+          <MdSunny className="text-xl font-bold" />
+        </button>
       </div>
     </header>
   );
