@@ -1,6 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
 
 function App() {
   const router = createBrowserRouter([
@@ -8,6 +13,28 @@ function App() {
       path: "/",
       element: <Layout />,
       errorElement: <ErrorPage />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/shop",
+          element: <Shop />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
     },
   ]);
   return <RouterProvider router={router} />;
