@@ -7,8 +7,8 @@ function Header() {
     <header className="flex justify-between items-center p-8">
       <Link
         to="/"
-        className="text-2xl font-bold">
-        EasyCart
+        className="text-3xl font-bold">
+        Easy<span className="text-blue-700">Cart</span>
       </Link>
       <nav className="flex gap-8 justify-between items-center">
         <NavLink
