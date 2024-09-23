@@ -1,7 +1,7 @@
 function About() {
   return (
     <main className="flex justify-center items-center p-8 h-full">
-      About page
+      <h2 className="text-3xl font-bold">About Us</h2>
     </main>
   );
 }
