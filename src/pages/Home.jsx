@@ -78,6 +78,14 @@ function Home() {
           />
         </div>
       </section>
+      <section className="flex justify-evenly items-center mb-36">
+        <h2 className="text-4xl font-bold">Do you have any questions?</h2>
+        <Link
+          to="/contact"
+          className="py-2 px-5 font-semibold text-white bg-blue-700 rounded-lg transition-colors hover:bg-blue-600">
+          Contact us
+        </Link>
+      </section>
     </main>
   );
 }
