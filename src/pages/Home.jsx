@@ -18,7 +18,7 @@ function Home() {
           <h2 className="text-5xl font-bold">
             Your One-Stop shop for Everything you need!
           </h2>
-          <span className="text-lg font-bold text-gray-500">
+          <span className="text-lg font-bold text-blue-700">
             Convenient, fast, easy.
           </span>
           <p>
