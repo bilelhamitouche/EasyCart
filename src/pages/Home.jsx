@@ -4,11 +4,16 @@ import FeatureCard from "../components/FeatureCard";
 import { MdOutlineSecurity } from "react-icons/md";
 import { FaTruck } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
+import ProductCategoryCard from "../components/ProductCategoryCard";
+import manClothingImage from "../assets/man-clothing.jpg";
+import womanClothingImage from "../assets/woman-clothing.jpg";
+import jewelryImage from "../assets/jewelry.jpg";
+import electronicsImage from "../assets/electronics.jpg";
 
 function Home() {
   return (
     <main className="p-8 mx-auto lg:container">
-      <section className="flex gap-8 justify-center items-center mx-auto mb-24">
+      <section className="flex gap-8 justify-center items-center mx-auto mb-36">
         <div className="flex flex-col flex-grow-0 gap-4 justify-center items-start w-1/2">
           <h2 className="text-5xl font-bold">
             Your One-Stop shop for Everything you need!
@@ -33,7 +38,7 @@ function Home() {
           className="object-cover w-1/2"
         />
       </section>
-      <section className="flex flex-col gap-16">
+      <section className="flex flex-col gap-16 mb-36">
         <h2 className="text-4xl font-bold text-center">What we offer</h2>
         <div className="grid grid-cols-3 gap-8 justify-evenly items-center">
           <FeatureCard
@@ -47,6 +52,29 @@ function Home() {
           <FeatureCard
             feature="Fast delivery"
             icon={<BiSupport className="text-8xl text-blue-700" />}
+          />
+        </div>
+      </section>
+      <section className="flex flex-col gap-16 mb-36">
+        <h2 className="text-4xl font-bold text-center">
+          Our product categories
+        </h2>
+        <div className="flex gap-8 justify-center items-center">
+          <ProductCategoryCard
+            name="Men's clothing"
+            image={manClothingImage}
+          />
+          <ProductCategoryCard
+            name="Women's clothing"
+            image={womanClothingImage}
+          />
+          <ProductCategoryCard
+            name="Jewelry"
+            image={jewelryImage}
+          />
+          <ProductCategoryCard
+            name="Electronics"
+            image={electronicsImage}
           />
         </div>
       </section>
