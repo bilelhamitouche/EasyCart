@@ -4,7 +4,7 @@ function ProductCategoryCard({ name, image }) {
       <img
         src={image}
         alt={`${name} image`}
-        className="object-center h-96 rounded-lg"
+        className="object-center h-96 rounded-lg shadow-md shadow-gray-650"
       />
       <p className="font-semibold text-center text-md">{name}</p>
     </div>
