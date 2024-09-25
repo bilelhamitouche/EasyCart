@@ -12,14 +12,6 @@ export async function detailsPageLoader({ params }) {
 
 function DetailsPage() {
   const product = useLoaderData();
-  const navigation = useNavigation();
-
-  if (navigation.state === "loading")
-    return (
-      <div className="flex flex-col gap-4 justify-center items-center p-8 mx-auto h-screen lg-container">
-        <span>Loading...</span>
-      </div>
-    );
   return (
     <div className="flex gap-8 justify-center items-center p-8 mx-auto lg:container">
       <div className="flex gap-16 justify-center items-center w-4/6">
