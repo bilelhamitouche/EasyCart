@@ -7,7 +7,7 @@ export default {
         roboto: ["Roboto", "system-ui", "sans-serif"],
       },
       gridTemplateRows: {
-        layout: "auto 1fr auto",
+        card: "1fr",
       },
     },
   },
