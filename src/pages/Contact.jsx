@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Contact() {
   return (
-    <main className="flex flex-col gap-8 items-center p-8 h-full">
+    <main className="flex flex-col gap-8 items-center p-8 mx-auto h-full lg:container">
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-3xl font-bold capitalize">contact us</h2>
         <p className="text-gray-500 text-md">
@@ -16,7 +16,7 @@ function Contact() {
             <input
               type="text"
               name="firstname"
-              className="p-2 rounded-md border border-gray-200 hover:border-blue-500"
+              className="p-2 rounded-md border border-gray-200 outline-none hover:border-blue-500"
               placeholder="Enter first name"
             />
           </label>
@@ -25,7 +25,7 @@ function Contact() {
             <input
               type="text"
               name="lastname"
-              className="p-2 rounded-md border border-gray-200 hover:border-blue-500"
+              className="p-2 rounded-md border border-gray-200 outline-none hover:border-blue-500"
               placeholder="Enter last name"
             />
           </label>
@@ -36,7 +36,7 @@ function Contact() {
             type="email"
             name="email"
             placeholder="Enter email address"
-            className="p-2 rounded-md border border-gray-200 hover:border-blue-500"
+            className="p-2 rounded-md border border-gray-200 outline-none hover:border-blue-500"
           />
         </label>
         <label className="flex flex-col col-span-2 gap-2">
@@ -45,7 +45,7 @@ function Contact() {
             type="number"
             name="phone"
             placeholder="Enter phone number"
-            className="p-2 rounded-md border border-gray-200 hover:border-blue-500"
+            className="p-2 rounded-md border border-gray-200 outline-none hover:border-blue-500"
           />
         </label>
         <label className="flex flex-col col-span-2 gap-2">
@@ -54,7 +54,7 @@ function Contact() {
             type="number"
             name="phone"
             placeholder="Enter phone number"
-            className="p-2 rounded-md border border-gray-200 hover:border-blue-500"
+            className="p-2 rounded-md border border-gray-200 outline-none hover:border-blue-500"
           />
         </label>
         <Link
