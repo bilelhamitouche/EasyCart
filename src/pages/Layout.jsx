@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import { Outlet, useLoaderData, useNavigation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -23,7 +22,6 @@ function Layout() {
   return (
     <div className="grid h-screen grid-rows-layout">
       <Header />
-      <Outlet />
       <Outlet context={products} />
       <Footer />
     </div>
