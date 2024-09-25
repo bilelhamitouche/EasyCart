@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData, useNavigation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -10,6 +11,7 @@ export async function layoutLoader() {
   const json = await response.json();
   return json;
 }
+
 function Layout() {
   const products = useLoaderData();
   const navigation = useNavigation();
@@ -22,6 +24,7 @@ function Layout() {
     <div className="grid h-screen grid-rows-layout">
       <Header />
       <Outlet />
+      <Outlet context={products} />
       <Footer />
     </div>
   );
