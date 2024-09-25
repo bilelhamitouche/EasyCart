@@ -6,6 +6,7 @@ import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
+import DetailsPage, { detailsPageLoader } from "./pages/DetailsPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +23,11 @@ function App() {
         {
           path: "/shop",
           element: <Shop />,
+        },
+        {
+          path: "/shop/:id",
+          loader: detailsPageLoader,
+          element: <DetailsPage />,
         },
         {
           path: "/about",
