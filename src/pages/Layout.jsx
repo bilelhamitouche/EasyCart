@@ -17,7 +17,9 @@ function Layout() {
 
   if (navigation.state === "loading")
     return (
-      <div className="flex justify-center items-center h-full">...Loading</div>
+      <div className="flex justify-center items-center h-screen">
+        ...Loading
+      </div>
     );
   return (
     <div className="grid h-screen grid-rows-layout">
