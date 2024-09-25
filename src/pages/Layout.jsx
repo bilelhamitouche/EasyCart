@@ -12,6 +12,12 @@ export async function layoutLoader() {
 }
 function Layout() {
   const products = useLoaderData();
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading")
+    return (
+      <div className="flex justify-center items-center h-full">...Loading</div>
+    );
   return (
     <div className="grid h-screen grid-rows-layout">
       <Header />
