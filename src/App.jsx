@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./pages/Layout";
+import Layout, { layoutLoader } from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
@@ -12,6 +12,7 @@ function App() {
     {
       path: "/",
       element: <Layout />,
+      loader: layoutLoader,
       errorElement: <ErrorPage />,
       children: [
         {
