@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 export async function detailsPageLoader({ params }) {
   const response = await fetch(
