@@ -1,9 +1,5 @@
 function Cart() {
-  return (
-    <main className="flex justify-center items-center p-8 h-full">
-      Cart page
-    </main>
-  );
+  return <section className="flex p-8 mx-auto h-full lg:container"></section>;
 }
 
 export default Cart;
