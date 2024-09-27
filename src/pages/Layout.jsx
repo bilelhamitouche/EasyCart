@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useState } from "react";
 import { CartContext } from "../contexts/CartContext";
+import Loading from "../components/Loading";
 
 export async function layoutLoader() {
   const response = await fetch("https://fakestoreapi.com/products", {
@@ -21,12 +22,7 @@ function Layout() {
   function addToCart({ id, title, price, quantity }) {}
   function removeFromCart({ id }) {}
 
-  if (navigation.state === "loading")
-    return (
-      <div className="flex justify-center items-center h-screen">
-        ...Loading
-      </div>
-    );
+  if (navigation.state === "loading") return <Loading />;
   return (
     <div className="grid h-screen grid-rows-layout">
       <Header />
