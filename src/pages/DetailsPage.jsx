@@ -1,4 +1,6 @@
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
 
 export async function detailsPageLoader({ params }) {
   const response = await fetch(
@@ -12,8 +14,10 @@ export async function detailsPageLoader({ params }) {
 
 function DetailsPage() {
   const product = useLoaderData();
+  const { cart, addToCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(0);
   return (
-    <div className="flex gap-8 justify-center items-center p-8 mx-auto lg:container">
+    <div className="flex gap-8 justify-center items-center p-8 mx-auto h-screen lg:container">
       <div className="flex gap-16 justify-center items-center w-4/6">
         <img
           src={product.image}
@@ -32,14 +36,23 @@ function DetailsPage() {
               <input
                 type="number"
                 max={"200"}
-                min={"1"}
-                defaultValue={"1"}
+                min={"0"}
+                value={quantity}
+                onChange={(e) => {
+                  setQuantity(e.target.value);
+                  console.log(quantity);
+                }}
                 className="p-2 w-full rounded-md border border-gray-200 outline-none"
               />
             </label>
             <span className="text-lg font-bold">{product.price} $</span>
           </div>
-          <button className="py-4 px-5 text-lg text-white bg-blue-700 rounded-lg hover:bg-blue-500">
+          <button
+            onClick={() => {
+              console.log(quantity);
+              addToCart(product.id, product.title, product.price, quantity);
+            }}
+            className="py-4 px-5 text-lg text-white bg-blue-700 rounded-lg hover:bg-blue-500">
             Add to cart
           </button>
         </div>
