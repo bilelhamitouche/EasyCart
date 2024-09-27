@@ -1,6 +1,8 @@
 import { Outlet, useLoaderData, useNavigation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { useState } from "react";
+import { CartContext } from "../contexts/CartContext";
 
 export async function layoutLoader() {
   const response = await fetch("https://fakestoreapi.com/products", {
@@ -28,7 +30,9 @@ function Layout() {
   return (
     <div className="grid h-screen grid-rows-layout">
       <Header />
-      <Outlet context={products} />
+      <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <Outlet context={products} />
+      </CartContext.Provider>
       <Footer />
     </div>
   );
