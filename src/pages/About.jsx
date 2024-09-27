@@ -38,7 +38,7 @@ function About() {
             className="py-3 px-4 text-lg rounded-l-lg border border-gray-500 outline-none"
           />
           <Link
-            to="/email"
+            to="/newsletter"
             className="py-3 px-4 text-lg text-white bg-black rounded-r-lg border border-black hover:opacity-80">
             Submit
           </Link>
