@@ -13,7 +13,11 @@ export async function layoutLoader() {
 
 function Layout() {
   const products = useLoaderData();
+  const [cart, setCart] = useState([]);
   const navigation = useNavigation();
+
+  function addToCart({ id, title, price, quantity }) {}
+  function removeFromCart({ id }) {}
 
   if (navigation.state === "loading")
     return (
