@@ -9,7 +9,7 @@ function Cart() {
     <section className="flex flex-col gap-16 justify-center items-center p-8 mx-auto h-full lg:container">
       {cart.length === 0 ? (
         <div className="flex flex-col gap-8 justify-center items-center">
-          <span className="text-2xl font-semibold">Your cart is empty</span>
+          <span className="text-3xl font-semibold">Your cart is empty</span>
           <Link
             to="/shop"
             className="py-2 px-5 text-lg font-bold text-white bg-blue-700 rounded-lg hover:bg-blue-500">
