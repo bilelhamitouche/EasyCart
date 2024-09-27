@@ -7,6 +7,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import DetailsPage, { detailsPageLoader } from "./pages/DetailsPage";
+import Newsletter from "./pages/Newsletter";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,8 +40,16 @@ function App() {
           element: <Cart />,
         },
         {
+          path: "/checkout",
+          element: <Checkout />,
+        },
+        {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/newsletter",
+          element: <Newsletter />,
         },
       ],
     },
