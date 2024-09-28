@@ -19,14 +19,36 @@ function Layout() {
   const [cart, setCart] = useState([]);
   const navigation = useNavigation();
 
-  function addToCart({ id, title, price, quantity }) {}
-  function removeFromCart({ id }) {}
+  function addToCart(id, title, image, price, quantity) {
+    setCart((prevCart) => [
+      ...prevCart,
+      {
+        id,
+        title,
+        image,
+        price,
+        quantity,
+      },
+    ]);
+  }
+  function removeFromCart(id) {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  }
+
+  function updateQuantity(id, quantity) {
+    const newCart = [...cart];
+    const index = newCart.findIndex((item) => item.id === id);
+    if (index === -1) throw new Error("Product Not found");
+    newCart[index].quantity += quantity;
+    setCart(newCart);
+  }
 
   if (navigation.state === "loading") return <Loading />;
   return (
     <div className="grid h-screen grid-rows-layout">
-      <Header />
-      <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+      <CartContext.Provider
+        value={{ cart, addToCart, removeFromCart, updateQuantity }}>
+        <Header />
         <Outlet context={products} />
       </CartContext.Provider>
       <Footer />
