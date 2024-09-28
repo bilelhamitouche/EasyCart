@@ -26,6 +26,7 @@ function About() {
           src={aboutImage}
           alt="about image"
           className="object-center w-1/2 rounded-lg shadow-sm shadow-gray-600"
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col gap-8 justify-center items-center">
