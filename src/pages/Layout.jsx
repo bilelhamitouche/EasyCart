@@ -18,6 +18,11 @@ function Layout() {
   const products = useLoaderData();
   const [cart, setCart] = useState([]);
   const navigation = useNavigation();
+  const total = cart.reduce(
+    (prevTotal, currentItem) =>
+      prevTotal + currentItem.price * currentItem.quantity,
+    0
+  );
 
   function addToCart(id, title, image, price, quantity) {
     setCart((prevCart) => [
@@ -51,7 +56,14 @@ function Layout() {
   return (
     <div className="grid h-screen grid-rows-layout">
       <CartContext.Provider
-        value={{ cart, addToCart, removeFromCart, updateQuantity }}>
+        value={{
+          cart,
+          addToCart,
+          removeFromCart,
+          emptyCart,
+          updateQuantity,
+          total,
+        }}>
         <Header />
         <Outlet context={products} />
       </CartContext.Provider>
