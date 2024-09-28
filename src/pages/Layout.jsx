@@ -35,6 +35,10 @@ function Layout() {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   }
 
+  function emptyCart() {
+    setCart([]);
+  }
+
   function updateQuantity(id, quantity) {
     const newCart = [...cart];
     const index = newCart.findIndex((item) => item.id === id);
