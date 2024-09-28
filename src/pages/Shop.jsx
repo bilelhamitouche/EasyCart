@@ -7,6 +7,7 @@ function Shop() {
     <main className="grid grid-cols-4 gap-8 p-8 mx-auto lg:container">
       {products.map((product) => (
         <ProductCard
+          key={product.id}
           id={product.id}
           title={product.title}
           image={product.image}
