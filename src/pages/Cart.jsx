@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 
 function Cart() {
-  const { cart, addToCart, removeFromCart, updateQuantity } =
-    useContext(CartContext);
+  const { cart, removeFromCart, emptyCart } = useContext(CartContext);
   const total = cart.length;
   return (
     <section className="flex flex-col gap-16 justify-center items-center p-8 mx-auto h-full lg:container">
@@ -18,33 +17,38 @@ function Cart() {
           </Link>
         </div>
       ) : (
-        <div className="flex flex-col gap-4 justify-center items-center">
+        <div className="flex flex-col gap-4 justify-center w-full items-between">
           {cart.map((cartItem) => (
             <li
               key={cartItem.id}
-              className="flex gap-8 justify-between items-center">
+              className="flex gap-8 justify-evenly items-center">
               <img
                 src={cartItem.image}
                 alt={`${cart.title} image`}
                 className="object-center w-36"
               />
-              <span className="text-md">{cartItem.title}</span>
-              <span className="text-md">{cartItem.quantity}</span>
-              <span className="text-md">
-                {cartItem.price * cartItem.quantity}
+              <span className="w-44 font-semibold text-md">
+                {cartItem.title}
               </span>
-              <button onClick={() => removeFromCart(cartItem.id)}>
+              <span className="text-md">{cartItem.quantity}</span>
+              <span className="font-semibold text-md">
+                {cartItem.price * cartItem.quantity} $
+              </span>
+              <button
+                onClick={() => removeFromCart(cartItem.id)}
+                className="py-2 px-5 font-medium text-white bg-red-500 rounded-md hover:bg-red-600">
                 Delete
               </button>
             </li>
           ))}
         </div>
       )}
-      <div className="flex justify-between items-center w-4/6">
+      <div className="flex justify-between items-center w-full">
         <span className="w-full text-xl font-bold">Total: {total}$</span>
         <Link
           to="/checkout"
-          className="py-2 px-5 text-lg font-bold text-white bg-black rounded-lg transition-colors hover:opacity-85">
+          onClick={() => emptyCart()}
+          className="py-2 px-5 text-lg font-medium text-white bg-black rounded-lg transition-colors hover:opacity-85">
           Checkout
         </Link>
       </div>
