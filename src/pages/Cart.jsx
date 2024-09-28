@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 
 function Cart() {
-  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const { cart, addToCart, removeFromCart, updateQuantity } =
+    useContext(CartContext);
   const total = cart.length;
   return (
     <section className="flex flex-col gap-16 justify-center items-center p-8 mx-auto h-full lg:container">
@@ -19,11 +20,22 @@ function Cart() {
       ) : (
         <div className="flex flex-col gap-4 justify-center items-center">
           {cart.map((cartItem) => (
-            <li className="flex">
+            <li
+              key={cartItem.id}
+              className="flex gap-8 justify-between items-center">
+              <img
+                src={cartItem.image}
+                alt={`${cart.title} image`}
+                className="object-center w-36"
+              />
               <span className="text-md">{cartItem.title}</span>
+              <span className="text-md">{cartItem.quantity}</span>
               <span className="text-md">
                 {cartItem.price * cartItem.quantity}
               </span>
+              <button onClick={() => removeFromCart(cartItem.id)}>
+                Delete
+              </button>
             </li>
           ))}
         </div>
