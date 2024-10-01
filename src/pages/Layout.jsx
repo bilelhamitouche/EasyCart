@@ -54,6 +54,8 @@ function Layout() {
     setCart(newCart);
   }
 
+  const contextData = navigation.state === "loading" ? "loading" : products;
+
   if (navigation.state === "loading") return <Loading />;
   return (
     <div className="grid h-screen grid-rows-layout">
@@ -67,7 +69,7 @@ function Layout() {
           total,
         }}>
         <Header />
-        <Outlet context={products} />
+        <Outlet context={contextData} />
       </CartContext.Provider>
       <Footer />
     </div>
