@@ -4,8 +4,8 @@ import aboutImage from "../assets/about-image.jpg";
 function About() {
   return (
     <section className="flex flex-col gap-32 justify-center items-center p-8 mx-auto h-full lg:container">
-      <div className="flex gap-8 justify-center items-center">
-        <div className="flex flex-col gap-6 justify-center w-1/2">
+      <div className="flex flex-col gap-8 justify-center items-center md:flex-row">
+        <div className="flex flex-col gap-6 justify-center md:w-1/2">
           <h2 className="text-4xl font-bold">About Us</h2>
           <p className="text-lg font-gray-500">
             At EasyCart, we believe shopping should be an enjoyable and
@@ -25,7 +25,7 @@ function About() {
         <img
           src={aboutImage}
           alt="about image"
-          className="object-center w-1/2 rounded-lg shadow-sm shadow-gray-600"
+          className="object-center rounded-lg shadow-sm md:w-1/2 shadow-gray-600"
           loading="lazy"
         />
       </div>
