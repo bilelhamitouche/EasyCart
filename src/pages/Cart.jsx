@@ -16,11 +16,11 @@ function Cart() {
           </Link>
         </div>
       ) : (
-        <div className="flex flex-col gap-4 justify-center w-full items-between">
+        <div className="flex flex-col gap-16 justify-center items-center w-full md:gap-4 md:items-between">
           {cart.map((cartItem) => (
             <li
               key={cartItem.id}
-              className="flex gap-8 justify-evenly items-center">
+              className="flex flex-col gap-8 justify-evenly items-center py-8 px-16 rounded-lg border border-gray-200 md:flex-row md:p-8">
               <img
                 src={cartItem.image}
                 alt={`${cart.title} image`}
