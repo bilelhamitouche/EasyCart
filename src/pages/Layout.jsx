@@ -1,7 +1,7 @@
 import { Outlet, useLoaderData, useNavigation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import Loading from "../components/Loading";
 
@@ -18,11 +18,13 @@ function Layout() {
   const products = useLoaderData();
   const [cart, setCart] = useState([]);
   const navigation = useNavigation();
-  const total = cart.reduce(
-    (prevTotal, currentItem) =>
-      prevTotal + currentItem.price * currentItem.quantity,
-    0
-  );
+  const total = useMemo(() => {
+    return cart.reduce(
+      (prevTotal, currentItem) =>
+        prevTotal + currentItem.price * currentItem.quantity,
+      0
+    );
+  }, [cart]);
 
   function addToCart(id, title, image, price, quantity) {
     setCart((prevCart) => [
