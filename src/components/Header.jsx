@@ -3,6 +3,7 @@ import { BsCart3 } from "react-icons/bs";
 import { MdSunny } from "react-icons/md";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
+import { FaBars } from "react-icons/fa";
 
 function Header() {
   const { cart } = useContext(CartContext);
@@ -13,7 +14,7 @@ function Header() {
         className="text-3xl font-bold">
         Easy<span className="text-blue-700">Cart</span>
       </Link>
-      <nav className="flex gap-8 justify-between items-center">
+      <nav className="hidden gap-8 justify-between items-center md:flex">
         <NavLink
           className={({ isActive }) => (isActive ? "text-blue-700" : "")}
           to="/">
@@ -47,6 +48,9 @@ function Header() {
         </Link>
         <button className="p-2 rounded-full hover:bg-gray-100">
           <MdSunny className="text-xl font-bold" />
+        </button>
+        <button className="block p-2 rounded-full md:hidden hover:bg-gray-100">
+          <FaBars className="text-xl font-bold" />
         </button>
       </div>
     </header>
