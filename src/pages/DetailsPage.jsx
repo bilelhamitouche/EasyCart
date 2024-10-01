@@ -18,11 +18,11 @@ function DetailsPage() {
   const [quantity, setQuantity] = useState(1);
   return (
     <div className="flex gap-8 justify-center items-center p-8 mx-auto h-screen lg:container">
-      <div className="flex gap-16 justify-center items-center w-4/6">
+      <div className="flex flex-col gap-8 justify-center items-center sm:gap-16 md:flex-row md:gap-8 md:gap-16 lg:w-4/6">
         <img
           src={product.image}
           alt={`${product.title} image`}
-          className="object-center w-96 h-96 rounded-lg"
+          className="object-center w-64 h-64 rounded-lg lg:w-96 lg:h-96"
         />
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-bold">{product.title}</h3>
@@ -30,7 +30,7 @@ function DetailsPage() {
             {product.category}
           </span>
           <p className="text-md">{product.description}</p>
-          <div className="flex gap-4 justify-between items-center">
+          <div className="flex gap-4 justify-between items-center md:justify-between">
             <label className="flex gap-4 items-center w-4/6">
               <span className="font-bold text-md">Qty:</span>
               <input
