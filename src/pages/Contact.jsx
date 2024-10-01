@@ -9,8 +9,8 @@ function Contact() {
           Please fill this form in a decent manner
         </p>
       </div>
-      <form className="grid flex-grow-0 grid-cols-2 gap-4 justify-center items-start p-8 mb-16 max-w-xl rounded-lg border border-gray-200">
-        <div className="flex gap-8 justify-between items-center">
+      <form className="grid flex-grow-0 grid-cols-2 gap-4 justify-center items-start p-8 mb-16 rounded-lg border border-gray-200 md:max-w-xl">
+        <div className="flex flex-col col-span-2 gap-8 justify-between items-center md:flex-row">
           <label className="flex flex-col gap-2 items-start">
             <span>First Name: </span>
             <input
