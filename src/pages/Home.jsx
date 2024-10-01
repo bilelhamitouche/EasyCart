@@ -13,8 +13,8 @@ import electronicsImage from "../assets/electronics.jpg";
 function Home() {
   return (
     <main className="p-8 mx-auto lg:container">
-      <section className="flex gap-8 justify-center items-center mx-auto mb-36">
-        <div className="flex flex-col flex-grow-0 gap-4 justify-center items-start w-1/2">
+      <section className="flex flex-col-reverse gap-16 justify-center items-center mx-auto mb-36 md:flex-row md:gap-8">
+        <div className="flex flex-col flex-grow-0 gap-6 justify-center items-center text-center md:gap-4 md:items-start md:w-1/2 md:text-left">
           <h2 className="text-5xl font-bold">
             Your One-Stop shop for Everything you need!
           </h2>
@@ -35,12 +35,12 @@ function Home() {
         <img
           src={shoppingBagsImage}
           alt="shopping bags"
-          className="object-cover w-1/2"
+          className="object-cover md:w-1/2"
         />
       </section>
       <section className="flex flex-col gap-16 mb-36">
         <h2 className="text-4xl font-bold text-center">What we offer</h2>
-        <div className="grid grid-cols-3 gap-8 justify-evenly items-center">
+        <div className="grid grid-cols-1 gap-8 justify-evenly items-center sm:grid-cols-3">
           <FeatureCard
             feature="Secure checkout"
             icon={<MdOutlineSecurity className="text-8xl text-blue-700" />}
@@ -59,7 +59,7 @@ function Home() {
         <h2 className="text-4xl font-bold text-center">
           Our product categories
         </h2>
-        <div className="flex gap-8 justify-center items-center">
+        <div className="flex flex-col gap-8 justify-center items-center md:flex-row">
           <ProductCategoryCard
             name="Men's clothing"
             image={manClothingImage}
@@ -78,8 +78,10 @@ function Home() {
           />
         </div>
       </section>
-      <section className="flex justify-evenly items-center mb-36">
-        <h2 className="text-4xl font-bold">Do you have any questions?</h2>
+      <section className="flex flex-col gap-16 justify-center items-center mb-36 sm:flex-row sm:gap-0 sm:justify-evenly">
+        <h2 className="text-4xl font-bold text-center sm:text-left">
+          Do you have any questions?
+        </h2>
         <Link
           to="/contact"
           className="py-2 px-5 font-semibold text-white bg-blue-700 rounded-lg transition-colors hover:bg-blue-600">
