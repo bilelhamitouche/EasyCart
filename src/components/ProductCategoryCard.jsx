@@ -9,7 +9,9 @@ function ProductCategoryCard({ name, image }) {
           loading="lazy"
         />
       </div>
-      <p className="font-semibold text-center text-md">{name}</p>
+      <p className="font-semibold text-center text-black dark:text-gray-200 text-md">
+        {name}
+      </p>
     </div>
   );
 }
