@@ -9,6 +9,15 @@ export default {
       gridTemplateRows: {
         card: "1fr",
       },
+      keyframes: {
+        darkMode: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(0.9)" },
+        },
+      },
+      animation: {
+        darkMode: "darkMode 0.3s ease-in-out 1",
+      },
     },
   },
   plugins: [],

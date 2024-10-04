@@ -7,11 +7,14 @@ import { FaBars, FaMoon } from "react-icons/fa";
 
 function Header() {
   const [dark, setDark] = useState(false);
+  const [animated, setAnimated] = useState(false);
   const { cart } = useContext(CartContext);
 
   function toggleDark() {
     setDark(!dark);
     document.body.classList.toggle("dark");
+    setAnimated(true);
+    setTimeout(() => setAnimated(false), 300);
   }
   return (
     <header className="flex justify-between items-center p-8">
@@ -61,8 +64,8 @@ function Header() {
           <BsCart3 className="text-xl font-bold dark:text-gray-200" />
         </Link>
         <button
-          className="flex justify-center items-center p-2 w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
-          onClick={() => toggleDark()}>
+          className={`flex justify-center items-center p-2 w-9 h-9 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 ${animated ? "animate-darkMode" : ""}`}
+          onClick={toggleDark}>
           {dark ? (
             <FaMoon className="text-xl font-bold dark:text-gray-200" />
           ) : (
