@@ -9,6 +9,7 @@ import Cart from "./pages/Cart";
 import DetailsPage, { detailsPageLoader } from "./pages/DetailsPage";
 import Newsletter from "./pages/Newsletter";
 import Checkout from "./pages/Checkout";
+import Email from "./pages/Email";
 
 function App() {
   const router = createBrowserRouter([
@@ -50,6 +51,10 @@ function App() {
         {
           path: "/newsletter",
           element: <Newsletter />,
+        },
+        {
+          path: "/email",
+          element: <Email />,
         },
       ],
     },
