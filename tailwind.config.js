@@ -8,6 +8,7 @@ export default {
       },
       gridTemplateRows: {
         card: "1fr",
+        layout: "auto 1fr auto",
       },
       keyframes: {
         darkMode: {
